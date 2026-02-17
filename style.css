@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --background-primary: linear-gradient(120deg, #1E1E1E, #363636, #353434);
+    --background-menu: linear-gradient(120deg, #353434, #202020, #1E1E1E);
+    --font-color-primary: #1E1E1E;
+    --color-primary: #D9D9D9;
+    --color-primary-hover: #b3b1b1;
+    --color-secundary: #4B4747;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+/* ==================== Home ==================== */
+
+.container-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background-primary);
+    width: 100%;
+    height: 920px;
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    background: var(--background-menu);
+    margin-top: 25px;
+    height: 90px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.menu-header a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.menu-header {
+    font-size: 1.7rem;
+    transition: 0.3s ease;
+}
+
+.menu-header a:hover {
+    color: var(--color-primary-hover);
+}
+
+.menu-header:hover {
+    transform: scale(0.95);
+    color: var(--color-primary-hover);
+    text-decoration: none;
+}
+
+.home {
+    display: grid;
+    grid-template-columns: 950px 1fr;
+    width: 100%;
+    margin-top: 80px;
+}
+
+.titulo-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color-primary);
+    gap: 15px;
+}
+
+.titulo-desc h1 {
+    font-size: 6rem;
+}
+
+.titulo-desc p {
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 10px;
+    text-align: justify;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-desc a {
+    margin-top: 30px;
+    background-color: var(--color-primary);
+    text-decoration: none;
+    color: var(--font-color-primary);
+    font-size: 1.3rem;
+    padding: 30px 150px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.titulo-desc a:hover {
+    transform: scale(0.95);
+    background-color: var(--color-primary-hover);
+}
+
+.perfil svg {
+    width: 550px;
+    height: 550px;
+}
+
+/* ==================== Sobre ==================== */
+
+.container-sobre {
+    max-width: 1500px;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    min-height: 400px;
+    padding-bottom: 50px;
+}
+
+.sobre {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 800px;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.titulo-sobre {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.titulo-sobre img {
+    height: 600px;
+    width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.conteudo-sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 10px;
+    text-align: justify;
+    color: var(--color-secundary);
+}
+
+/* ==================== Contato ==================== */
+
+.container-contato {
+    background: var(--background-primary);
+    width: 100%;
+    padding: 50px 0 100px 0;
+    color: var(--color-primary);
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    justify-items: center;
+}
+
+.titulo-contato {
+    font-size: 2rem;
+}
+
+.grid-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.grid-right a {
+    background-color: var(--color-primary);
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--font-color-primary);
+    transition: 0.3s ease;
+}
+
+.grid-right a:hover {
+    transform: scale(0.95);
+    background-color: var(--color-primary-hover);
+}
+
+.grid-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+.contatos .email,
+.contatos .telefone {
+    display: flex;
+    gap: 8px;
+}
+
+.contatos .email img,
+.contatos .telefone img {
+    width: 20px;
+    height: 20px;
+}
+
+.contatos-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contatos-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.direitos {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-family: "Inter", sans-serif;
+}
+
+.direitos a {
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+@media (max-width: 1550px) {
+    .container-home {
+        height: 710px;
+    }
+
+    .header {
+        border-radius: 5px;
+        margin-top: 25px;
+        height: 70px;
+    }
+
+    .menu-header a {
+        font-size: 1.3rem;
+    }
+
+    .home {
+        grid-template-columns: 800px 1fr;
+        margin-top: 80px;
+    }
+
+    .titulo-desc {
+        gap: 15px;
+    }
+
+    .titulo-desc h1 {
+        font-size: 5rem;
+    }
+
+    .titulo-desc p {
+        font-size: 1.2rem;
+    }
+
+    .titulo-desc a {
+        font-size: 1.3rem;
+        margin-top: 30px;
+        padding: 20px 100px;
+        border-radius: 10px;
+    }
+    
+    .perfil svg {
+        width: 400px;
+        height: 400px;
+    }
+
+    .titulo-sobre {
+        font-size: 2rem;
+    }
+
+    .titulo-sobre img {
+        width:425px;
+        height: 500px;
+    }
+
+    .container-sobre {
+        max-width: 1300px;
+    }
+
+    .conteudo-sobre {
+        font-size: 1rem;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-home {
+        height: 750px;
+        padding: 0 20px;
+    }
+
+    .header {
+        height: 50px;
+    }
+
+    .menu-header a {
+        font-size: 0.95rem
+    }
+
+    .container-header {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .home {
+        margin-top: 30px;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .perfil svg {
+        margin-top: 20px;
+        width: 250px;
+        height: 250px;
+    }
+
+    .titulo-desc h1 {
+        font-size: 2rem;
+    }
+
+    .titulo-desc p {
+        font-size: 1rem;
+    }
+
+    .titulo-desc a {
+        margin-top: 0;
+        padding: 15px 50px;
+    }
+
+    .container-sobre {
+        width: 100%;
+        background-color: white;
+        padding: 20px;
+        min-height: auto;
+    }
+
+    .sobre {
+        grid-template-columns: 1fr
+    }
+
+    .conteudo-sobre {
+        font-size: 1rem;
+    }
+
+    .titulo-sobre img {
+        opacity: 0;
+        display: none;
+    }
+
+    .container-contato {
+        padding: 50px 0 50px 0;
+    }
+
+    .titulo-contato {
+        font-size: 1.3rem;
+    }
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .grid-right {
+        order: -1;
+        font-size: 0.5rem;
+        font-family: "Inter", sans-serif;
+    }
+
+    .grid-right a {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 1.2rem;
+    }
+
+    .grid-left {
+        justify-content: center;
+    }
+
+    .direitos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+        width: 100%;
+    }
+}

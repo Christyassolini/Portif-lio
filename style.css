@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wopsz,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -19,6 +19,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
     width: 100%;
     min-height: 100vh;
     font-family: "Bebas Neue", sans-serif;
+    overflow-x: hidden;
 }
 
 /* ==================== Home ==================== */
@@ -40,6 +42,7 @@ body {
     width: 100%;
     height: 920px;
     padding-top: 140px;
+    overflow: hidden;
 }
 
 .container-header {
@@ -237,6 +240,7 @@ body {
 
 .icon-down {
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .certificado-group .info-certificado {
@@ -258,11 +262,6 @@ body {
 
 .certificado-group.active .icon-down {
     transform: rotate(180deg);
-}
-
-.icon-down {
-    cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
 .info {
@@ -446,12 +445,13 @@ body {
     }
 }
 
-/* ==================== Responsivo Mobile Portrait (vertical) ==================== */
+/* ==================== Mobile Portrait (vertical) ==================== */
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
     .container-home {
         height: 750px;
         padding: 80px 20px 0 20px;
+        overflow: hidden;
     }
 
     .header {
@@ -459,7 +459,7 @@ body {
     }
 
     .menu-header a {
-        font-size: 0.75rem
+        font-size: 0.75rem;
     }
 
     .container-header {
@@ -467,8 +467,6 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
         padding: 0 20px;
     }
 
@@ -476,7 +474,7 @@ body {
         margin-top: 30px;
         grid-template-columns: 1fr;
         width: 100%;
-        max-width: 700px;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -508,7 +506,7 @@ body {
     }
 
     .sobre {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .conteudo-sobre {
@@ -608,10 +606,13 @@ body {
     }
 }
 
-/* ==================== Responsivo Mobile Landscape (horizontal) ==================== */
-/* Aplica quando o celular está virado: altura pequena e orientação landscape */
+/* ==================== Mobile Landscape (horizontal) ==================== */
 
-@media (max-height: 500px) and (orientation: landscape) {
+@media (orientation: landscape) and (max-width: 1024px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
 
     /* --- Header --- */
     .container-header {
@@ -623,54 +624,58 @@ body {
     }
 
     .header {
-        margin-top: 10px;
-        height: 45px;
-        width: 90%;
+        margin-top: 8px;
+        height: 46px;
+        width: 92%;
         border-radius: 8px;
     }
 
     .menu-header {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .menu-header a {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     /* --- Home --- */
     .container-home {
         height: auto;
-        min-height: 100vh;
-        padding: 65px 30px 30px 30px;
+        min-height: 100svh;
+        padding: 65px 40px 30px 40px;
+        overflow: hidden;
     }
 
     .home {
         display: grid;
         grid-template-columns: 1fr 1fr;
         width: 100%;
-        max-width: 900px;
-        margin-top: 20px;
+        max-width: 100%;
+        margin-top: 15px;
         gap: 20px;
+        align-items: center;
     }
 
     .titulo-desc {
         gap: 10px;
+        align-items: flex-start;
         justify-content: center;
+        padding-left: 10px;
     }
 
     .titulo-desc h1 {
-        font-size: 2.2rem;
-        text-align: center;
+        font-size: 2.4rem;
+        line-height: 1.1;
     }
 
     .titulo-desc p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         text-align: justify;
     }
 
     .titulo-desc a {
         margin-top: 10px;
-        padding: 12px 40px;
+        padding: 12px 35px;
         font-size: 1rem;
     }
 
@@ -689,19 +694,19 @@ body {
     /* --- Sobre --- */
     .container-sobre {
         max-width: 100%;
-        padding: 20px 30px;
+        padding: 25px 40px;
     }
 
     .sobre {
         margin-top: 20px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.4fr;
         gap: 30px;
         align-items: start;
     }
 
     .titulo-sobre {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .titulo-sobre img {
@@ -709,8 +714,9 @@ body {
         opacity: 1;
         width: 100%;
         height: auto;
-        max-height: 300px;
+        max-height: 280px;
         object-fit: cover;
+        border-radius: 12px;
     }
 
     .conteudo-sobre {
@@ -719,11 +725,11 @@ body {
 
     /* --- Certificados --- */
     .container-certificado {
-        padding: 20px 30px;
+        padding: 25px 40px;
     }
 
     .titulo-certificado {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .certificado-section {
@@ -731,7 +737,7 @@ body {
     }
 
     .certificado-group {
-        padding: 5px 20px;
+        padding: 5px 25px;
     }
 
     .certificado-icon {
@@ -740,17 +746,18 @@ body {
     }
 
     .content-certificado {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .content-certificado img {
-        width: 25px;
-        height: 20px;
+        width: 28px;
+        height: 22px;
     }
 
     .info-certificado {
         flex-direction: row;
         gap: 20px;
+        align-items: flex-start;
     }
 
     .info {
@@ -768,7 +775,7 @@ body {
     }
 
     .titulo-contato {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .grid-container {
@@ -780,12 +787,11 @@ body {
 
     .grid-right {
         order: 0;
-        font-size: 1rem;
         font-family: "Bebas Neue", sans-serif;
     }
 
     .grid-right h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .grid-right a {
@@ -797,7 +803,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         width: 100%;
     }
 }

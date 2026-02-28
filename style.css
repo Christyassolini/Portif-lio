@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wopsz,wght@0,200..800;1,200..800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -240,7 +240,6 @@ body {
 }
 
 .certificado-group .info-certificado {
-    /* oculto por padrão para o efeito accordion */
     display: flex;
     max-height: 0;
     opacity: 0;
@@ -254,11 +253,9 @@ body {
 .certificado-group.active .info-certificado {
     display: flex;
     max-height: 800px;
-    /* suficiente para acomodar o conteúdo */
     opacity: 1;
 }
 
-/* ícone rotaciona quando aberto */
 .certificado-group.active .icon-down {
     transform: rotate(180deg);
 }
@@ -380,6 +377,8 @@ body {
     color: #1E1E1E;
 }
 
+/* ==================== Responsivo 1550px ==================== */
+
 @media (max-width: 1550px) {
     .container-home {
         height: 710px;
@@ -446,6 +445,8 @@ body {
         grid-template-columns: 1fr 600px;
     }
 }
+
+/* ==================== Responsivo Mobile Portrait (vertical) ==================== */
 
 @media (max-width: 768px) {
     .container-home {
@@ -604,5 +605,199 @@ body {
         width: 200px;
         height: 150px;
         margin-bottom: 20px;
+    }
+}
+
+/* ==================== Responsivo Mobile Landscape (horizontal) ==================== */
+/* Aplica quando o celular está virado: altura pequena e orientação landscape */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    /* --- Header --- */
+    .container-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .header {
+        margin-top: 10px;
+        height: 45px;
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    .menu-header {
+        font-size: 1rem;
+    }
+
+    .menu-header a {
+        font-size: 1rem;
+    }
+
+    /* --- Home --- */
+    .container-home {
+        height: auto;
+        min-height: 100vh;
+        padding: 65px 30px 30px 30px;
+    }
+
+    .home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        max-width: 900px;
+        margin-top: 20px;
+        gap: 20px;
+    }
+
+    .titulo-desc {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .titulo-desc h1 {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .titulo-desc p {
+        font-size: 0.85rem;
+        text-align: justify;
+    }
+
+    .titulo-desc a {
+        margin-top: 10px;
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+
+    .perfil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .perfil svg {
+        width: 220px;
+        height: 220px;
+        margin-top: 0;
+    }
+
+    /* --- Sobre --- */
+    .container-sobre {
+        max-width: 100%;
+        padding: 20px 30px;
+    }
+
+    .sobre {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        align-items: start;
+    }
+
+    .titulo-sobre {
+        font-size: 1.5rem;
+    }
+
+    .titulo-sobre img {
+        display: block;
+        opacity: 1;
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .conteudo-sobre {
+        font-size: 0.9rem;
+    }
+
+    /* --- Certificados --- */
+    .container-certificado {
+        padding: 20px 30px;
+    }
+
+    .titulo-certificado {
+        font-size: 1.5rem;
+    }
+
+    .certificado-section {
+        width: 90%;
+    }
+
+    .certificado-group {
+        padding: 5px 20px;
+    }
+
+    .certificado-icon {
+        height: 55px;
+        margin-bottom: 10px;
+    }
+
+    .content-certificado {
+        font-size: 1rem;
+    }
+
+    .content-certificado img {
+        width: 25px;
+        height: 20px;
+    }
+
+    .info-certificado {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .info {
+        font-size: 0.85rem;
+    }
+
+    .img-certificado img {
+        width: 200px;
+        height: 140px;
+    }
+
+    /* --- Contato --- */
+    .container-contato {
+        padding: 30px 0 40px 0;
+    }
+
+    .titulo-contato {
+        font-size: 1.5rem;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 80%;
+        gap: 20px;
+    }
+
+    .grid-right {
+        order: 0;
+        font-size: 1rem;
+        font-family: "Bebas Neue", sans-serif;
+    }
+
+    .grid-right h2 {
+        font-size: 1.2rem;
+    }
+
+    .grid-right a {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .direitos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        width: 100%;
     }
 }

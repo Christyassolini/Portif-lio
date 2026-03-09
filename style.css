@@ -193,7 +193,7 @@ body {
 /* ==================== Certificados ==================== */
 
 .container-certificado {
-    background-color: white;
+    background: var(--background-primary);
     width: 100%;
     padding: 50px;
 }
@@ -202,6 +202,7 @@ body {
     margin-bottom: 20px;
     font-size: 2rem;
     text-align: center;
+    color: var(--color-primary);
 }
 
 .certificado-section {
@@ -276,6 +277,191 @@ body {
 
 .img-certificado img:hover {
     transform: scale(1.05);
+}
+
+/* ==================== Contato ==================== */
+
+.container-projeto {
+    width: 100%;
+}
+
+.projetos-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.title-projetos {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.projetos-group {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    justify-items: center;
+    margin-bottom: 40px;
+}
+
+.projetos-field {
+    text-align: center;
+    background: var(--background-primary);
+    color: white;
+    font-size: 1.3rem;
+    width: 370px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.projetos-field:hover {
+    transform: scale(1.01);
+}
+
+.projeto-expandable {
+    cursor: pointer;
+}
+
+.projeto-hint {
+    width: 320px;
+    margin: -4px 0 0;
+    font-family: "Inter", sans-serif;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+
+.resumo {
+    width: 320px;
+}
+
+.projeto-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 2000;
+}
+
+.projeto-modal.active {
+    display: block;
+}
+
+.projeto-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.projeto-modal-content {
+    position: relative;
+    width: min(760px, calc(100% - 32px));
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: 6vh auto 0;
+    background: var(--background-primary);
+    color: var(--color-primary);
+    border-radius: 12px;
+    padding: 26px 22px 22px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.projeto-modal-content h2 {
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.projeto-modal-content .projeto-desc {
+    margin-bottom: 12px;
+}
+
+.projeto-modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    border: none;
+    background: transparent;
+    color: var(--color-primary);
+    font-size: 1.9rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.video-container {
+    display: flex;
+    margin: 0 auto;
+    position: relative;
+    width: 320px;
+    height: 200px;
+    cursor: default;
+    box-shadow: 0 10px 30px rgba(219, 216, 216, 0.247);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+}
+
+.video-capa,
+.video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-capa {
+    pointer-events: none;
+}
+
+.projeto-desc {
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: justify;
+    line-height: 1.4;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.projeto-desc a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.links p {
+    margin: 0;
+}
+
+.github,
+.site {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.github img,
+.site img {
+    width: 20px;
+    height: 20px;
+    margin-left: 0;
 }
 
 /* ==================== Contato ==================== */
@@ -518,6 +704,50 @@ body {
         display: none;
     }
 
+    .container-projeto {
+        width: 100%;
+        padding: 10px 10px 30px 10px;
+        overflow-x: hidden;
+    }
+
+    .projetos-section {
+        width: 100%;
+        padding: 0 8px;
+    }
+
+    .title-projetos {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .projetos-group {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 16px;
+        margin-bottom: 20px;
+        justify-items: center;
+    }
+
+    .projetos-field {
+        width: calc(100% - 12px);
+        max-width: 280px;
+        min-width: 0;
+        padding: 14px;
+        gap: 12px;
+        font-size: 1rem;
+    }
+
+    .video-container,
+    .resumo,
+    .projeto-hint {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .projeto-hint {
+        font-size: 0.74rem;
+    }
+
     .container-contato {
         padding: 50px 0 50px 0;
     }
@@ -610,7 +840,8 @@ body {
 
 @media (orientation: landscape) and (max-width: 1024px) {
 
-    html, body {
+    html,
+    body {
         overflow-x: hidden;
     }
 
@@ -703,6 +934,7 @@ body {
         grid-template-columns: 1fr 1.4fr;
         gap: 30px;
         align-items: start;
+        justify-items: center;
     }
 
     .titulo-sobre {
@@ -720,7 +952,7 @@ body {
     }
 
     .conteudo-sobre {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
     /* --- Certificados --- */
@@ -767,6 +999,62 @@ body {
     .img-certificado img {
         width: 200px;
         height: 140px;
+    }
+
+    /* --- Projetos --- */
+    .container-projeto {
+        width: 100%;
+        padding: 20px 20px 30px;
+        overflow-x: hidden;
+    }
+
+    .title-projetos {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+
+    .projetos-group {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        width: min(100%, 760px);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .projetos-field {
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+        justify-self: center;
+        padding: 14px;
+        font-size: 1.05rem;
+    }
+
+    .video-container {
+        width: 100%;
+        height: 180px;
+    }
+
+    .resumo,
+    .projeto-hint {
+        width: 100%;
+    }
+
+    /* --- Modal --- */
+    .projeto-modal-content {
+        width: min(580px, calc(100% - 32px));
+        max-height: 80vh;
+        padding: 20px 18px 18px;
+        font-size: 0.9rem;
+    }
+
+    .projeto-modal-content h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .projeto-modal-content .projeto-desc {
+        font-size: 0.82rem;
+        margin-bottom: 10px;
     }
 
     /* --- Contato --- */

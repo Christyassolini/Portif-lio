@@ -128,3 +128,109 @@
         }
     });
 })();
+
+// GSAP ScrollTrigger - revelar conteúdo ao rolar
+(function () {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const homeTl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+    homeTl
+        .from('.container-home .header', {
+            opacity: 0,
+            y: -24,
+            duration: 0.7,
+            clearProps: 'all'
+        })
+        .from('.container-home .titulo-desc h1', {
+            opacity: 0,
+            y: 40,
+            duration: 0.8,
+            clearProps: 'all'
+        }, '-=0.2')
+        .from('.container-home .titulo-desc p', {
+            opacity: 0,
+            y: 28,
+            duration: 0.7,
+            clearProps: 'all'
+        }, '-=0.45')
+        .from('.container-home .btn-curriculo', {
+            opacity: 0,
+            y: 22,
+            duration: 0.65,
+            clearProps: 'all'
+        }, '-=0.35')
+        .from('.container-home .perfil svg', {
+            opacity: 0,
+            x: 40,
+            scale: 0.96,
+            duration: 0.9,
+            clearProps: 'all'
+        }, '-=0.7');
+
+    gsap.from('.container-sobre .titulo-sobre', {
+        opacity: 0,
+        y: 50,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.container-sobre',
+            start: 'top 70%',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.from('.container-sobre .conteudo-sobre p', {
+        opacity: 0,
+        y: 24,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.container-sobre .conteudo-sobre',
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.from('.titulo-certificado, .certificado-group', {
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        stagger: 0.14,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.container-certificado',
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.from('.title-projetos, .projetos-field', {
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        stagger: 0.14,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.container-projeto',
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+        }
+    });
+
+    gsap.from('.titulo-contato, .grid-left, .grid-right, .direitos', {
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.container-contato',
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+        }
+    });
+})();
